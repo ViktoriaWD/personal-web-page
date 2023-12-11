@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes slideInLeft {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.5s ease-out;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.5s ease-out;
+  }
+
+  .hamburger-menu {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    transition: all 0.25s;
+    position: relative;
+  }
+
+  .hamburger-top,
+  .hamburger-middle,
+  .hamburger-bottom {
+    position:absolute;
+    top: 0;
+    left:0;
+    width: 24px;
+    height: 2px;
+    background:black;
+    transform: rotate(0);
+    transition: all 0.5s
+  }
+
+  .hamburger-middle{
+    transform: translateY(7px);
+  }
+  .hamburger-bottom{
+    transform: translateY(14px);
+  }
+
+  .open{
+    transform:rotate(90deg);
+    transform: translateY(0px);
+  }
+
+  .open .hamburger-top {
+    transform: rotate(45deg) translateY(6px) translate(6px);
+  }
+
+  .open .hamburger-middle{
+    display: none;
+  }
+
+    .open .hamburger-bottom{
+        transform:rotate(-45deg) translateY(6px) translate(-6px);
+    }
